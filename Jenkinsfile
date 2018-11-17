@@ -8,6 +8,9 @@ pipeline {
       }
     }
     stage('Copy the code') {
+      when {
+        branch 'master'
+      }
       steps {
         sh 'cp -rf "$WORKSPACE/target/helloworld-0.0.1-SNAPSHOT.jar" /home/p/Meetup/demo.jar'
         sh 'echo "Copy is also done"'
@@ -23,5 +26,11 @@ pipeline {
         sh 'echo "Pa5sw0rd" | sudo -S service demo restart'
       }
     }
+    stage('Monitoring') {
+     steps {
+       sh 'sleep 5'
+       sh 'echo "Pa5sw0rd" | sudo -S service demo status'
+     }
+   }
   }
 }
