@@ -23,5 +23,11 @@ pipeline {
         sh 'echo "Pa5sw0rd" | sudo -S service demo restart'
       }
     }
+    stage('Monitoring') {
+     steps {
+       sh 'sleep 5'
+       sh 'echo "Pa5sw0rd" | sudo -S service demo status'
+     }
+   }
   }
 }
