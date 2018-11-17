@@ -17,5 +17,10 @@ public class SayHelloController {
 	public ResponseEntity<String> sayNewHello() {
 		return new ResponseEntity<String>("Hello To New World", HttpStatus.OK);
 	}
+
 	
+	@GetMapping("/worldagain")
+	public ResponseEntity<String> sayNewHelloAgain() {
+		return new ResponseEntity<String>("Hello To New World Again", HttpStatus.OK);
+	}
 }
