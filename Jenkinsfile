@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Deploy the code') {
       steps {
-        sh 'sudo service demo restart'
+        sh 'echo "Pa5sw0rd" | sudo -S service demo restart'
       }
     }
   }
