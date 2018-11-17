@@ -13,4 +13,9 @@ public class SayHelloController {
 		return new ResponseEntity<String>("Hello World", HttpStatus.OK);
 	}
 	
+	@GetMapping("/world")
+	public ResponseEntity<String> sayNewHello() {
+		return new ResponseEntity<String>("Hello To New World", HttpStatus.OK);
+	}
+	
 }
