@@ -13,6 +13,11 @@ pipeline {
         sh 'echo "Copy is also done"'
       }
     }
+    stage('Do you want to deploy?') {
+      steps {
+        input(message: 'Do you want to deploy?', ok: 'Oh Yeah!')
+      }
+    }
     stage('Deploy the code') {
       steps {
         sh 'echo "Pa5sw0rd" | sudo -S service demo restart'
