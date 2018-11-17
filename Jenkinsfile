@@ -8,6 +8,9 @@ pipeline {
       }
     }
     stage('Copy the code') {
+      when {
+        branch 'master'
+      }
       steps {
         sh 'cp -rf "$WORKSPACE/target/helloworld-0.0.1-SNAPSHOT.jar" /home/p/Meetup/demo.jar'
         sh 'echo "Copy is also done"'
